@@ -22,8 +22,8 @@ python3 -m torch.distributed.launch $DISTRIBUTED_ARGS \
        --seq-length 1024 \
        --max-position-embeddings 1024 \
        --train-iters 320000 \
-       --save ../../checkpoints/gpt2_345m \
-       --load ../../checkpoints/gpt2_345m \
+       --save ./checkpoints/gpt2_345m \
+       --load ./checkpoints/gpt2_345m \
        --tensorboard-dir ../../logs/gpt2_345m \
        --log-interval 100 \
        --resume-dataloader \
@@ -32,7 +32,7 @@ python3 -m torch.distributed.launch $DISTRIBUTED_ARGS \
        --loose-json \
        --lazy-loader \
        --tokenizer-type RubertaBPETokenizer \
-       --tokenizer-path ../../data/vocab_50000.bpe \
+       --tokenizer-path ./data/vocab_50000.bpe \
        --save-interval 2000 \
        --eval-interval 2000 \
        --vocab-size 50000 \
