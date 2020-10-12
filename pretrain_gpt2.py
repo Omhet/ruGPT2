@@ -507,9 +507,9 @@ def initialize_distributed(args):
     device = args.rank % torch.cuda.device_count()
     if args.local_rank is not None:
         device = args.local_rank
-    print(device)
+    print('device', device)
     
-    torch.cuda.set_device(0)
+    torch.cuda.set_device(device)
     # Call the init process
     init_method = 'tcp://'
     master_ip = os.getenv('MASTER_ADDR', 'localhost')
