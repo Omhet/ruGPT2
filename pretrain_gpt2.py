@@ -507,7 +507,9 @@ def initialize_distributed(args):
     device = args.rank % torch.cuda.device_count()
     if args.local_rank is not None:
         device = args.local_rank
-    torch.cuda.set_device(device)
+    print(device)
+    
+    torch.cuda.set_device(0)
     # Call the init process
     init_method = 'tcp://'
     master_ip = os.getenv('MASTER_ADDR', 'localhost')
@@ -588,6 +590,7 @@ def main():
 
     # Arguments.
     args = get_args()
+    print_args(args)
 
     writer = None
     if args.tensorboard_dir and args.rank == 0:
