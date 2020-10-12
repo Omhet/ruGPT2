@@ -27,7 +27,7 @@ python3 -m torch.distributed.launch $DISTRIBUTED_ARGS \
        --tensorboard-dir ../../logs/gpt2_345m \
        --log-interval 100 \
        --resume-dataloader \
-       --train-data ../../data/train.json \
+       --train-data ./data/train.json \
        --text-key text \
        --loose-json \
        --lazy-loader \
