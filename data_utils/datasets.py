@@ -485,8 +485,8 @@ class GPT2Dataset(data.Dataset):
             else:
                 lens = np.array([len(d['text']) if isinstance(d, dict)
                                  else len(d) for d in self.ds])
-            print('lens', lens)
-            self.total_len = np.sum(lens)
+            print('lens', list(lens))
+            self.total_len = np.sum(listlens)
             self.weighting = list(accumulate(list(lens)))
         else:
             self.weighting = None
