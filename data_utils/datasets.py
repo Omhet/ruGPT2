@@ -494,7 +494,7 @@ class GPT2Dataset(data.Dataset):
     def get_weighted_samples(self, np_rng):
         if self.weighting is not None:
             idx = np_rng.randint(self.total_len)
-            print('get_weighted_samples', self.weighting)
+            print('get_weighted_samples', idx)
             return bisect_right(self.weighting, idx)
         else:
             return np_rng.randint(self.ds_len)
